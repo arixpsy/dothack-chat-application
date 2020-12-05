@@ -11,7 +11,7 @@
 <script>
 import firebase from "firebase/app";
 import Login from "./components/Login";
-import Chat from "./components/Chat";
+import Chat from "./components/Chat/Chat";
 import Navbar from "./components/Navbar";
 
 export default {

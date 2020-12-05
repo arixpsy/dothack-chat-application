@@ -20,6 +20,7 @@ firebase.initializeApp(firebaseConfig)
 // Utility to Export
 const db = firebase.database();
 const auth = firebase.auth()
+const firestore = firebase.firestore();
 
 // Exporting the Utilities
-export { db, auth }
+export { db, auth, firestore }
