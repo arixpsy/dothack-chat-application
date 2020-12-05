@@ -4,7 +4,7 @@
         <div class="messsage-container">
             <Message />
         </div>
-        <MessageInput :userId="1"></MessageInput>
+        <MessageInput></MessageInput>
     </div>
 </template>
 <script>
