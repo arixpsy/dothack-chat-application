@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="login-container">
         <h1>Login Page</h1>
         <div id="firebaseui-auth-container"></div>
     </div>
@@ -24,5 +24,8 @@ export default {
 }
 </script>
 <style scoped>
-
+h1{
+    text-align: center;
+    margin-bottom: 25px;
+}
 </style>

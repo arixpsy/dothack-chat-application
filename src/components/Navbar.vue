@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button v-on:click="logoutTrigger">logout</button>
+        <button v-on:click="logoutTrigger">Logout</button>
     </div>
 </template>
 <script>
@@ -20,10 +20,11 @@ div{
     height: 56px;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    background-color: blue;
+    padding: 0 15px;
 }
 </style>

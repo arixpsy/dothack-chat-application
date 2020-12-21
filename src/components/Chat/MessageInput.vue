@@ -1,6 +1,7 @@
 <template>
     <form v-on:submit.prevent="sendMessage">
-        <input type="text" placeholder="" v-model="messageInput" />
+        <input type="text" placeholder="Enter your message here" v-model="messageInput" />
+        <button>Send</button>
     </form>
 </template>
 <script>
@@ -15,6 +16,7 @@ export default {
     },
     methods: {
         async sendMessage(){
+            if (this.messageInput == "") return;
             let user = firebase.auth().currentUser
             
             const messageObject = {
@@ -32,6 +34,19 @@ export default {
     }
 }
 </script>
-
-
-your mother is gay
+<style scoped>
+form{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+}
+input{
+    width: 100%;
+    padding: 5px 10px;
+    outline: none;
+}
+button{
+    margin-left: 15px;
+}
+</style>

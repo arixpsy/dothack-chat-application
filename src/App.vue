@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Navbar v-if="user" v-on:logout="clearUser"></Navbar>
-    <Chat v-if="user"></Chat>
+    <Navbar v-if="isloggedIn" v-on:logout="clearUser"></Navbar>
+    <Chat v-if="isloggedIn"></Chat>
     <Login v-else></Login>
   </div>
 </template>
@@ -13,6 +13,7 @@ import firebase from "firebase/app";
 import Login from "./components/Login";
 import Chat from "./components/Chat/Chat";
 import Navbar from "./components/Navbar";
+import './assets/main.css';
 
 export default {
   name: "App",
@@ -32,6 +33,14 @@ export default {
   methods:{
     clearUser(){
       this.user = null
+      this.$nextTick(()=>{
+        this.$forceUpdate();
+      });
+    }
+  },
+  computed:{
+    isloggedIn(){
+      return this.user == null ? false : true;
     }
   }
 };
@@ -44,9 +53,6 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: system-ui, sans-serif;
 }
 
@@ -54,5 +60,6 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 56px;
+  min-height: 100vh;
 }
 </style>
